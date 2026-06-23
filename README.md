@@ -22,9 +22,9 @@ Movie-Recommendation/
 │   ├── movies.html       # Movie cards listing page
 │   ├── movies.css        # Card & filter grid styling
 │   └── filter.js         # Filters & dynamic listing module
-├── index.html            # Final integrated app (Created during Integration)
-├── style.css             # Final integrated styles (Created during Integration)
-└── app.js                # Final integrated controller (Created during Integration)
+├── index.html            # Final integrated app (Created during Integration) // I'll make them
+├── style.css             # Final integrated styles (Created during Integration) // I'll make them
+└── app.js                # Final integrated controller (Created during Integration) //I'll make them
 ```
 
 ---
