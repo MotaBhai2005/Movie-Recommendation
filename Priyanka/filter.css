@@ -1,0 +1,80 @@
+.filter-container {
+    display: flex;
+    justify-content: space-between;
+
+    background-color: #040c2c;
+    box-shadow: 1px 1px 15px #3f4972;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    padding: 20px 24px;
+
+    gap: 32px;
+    width: 100%;
+}
+
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+.filter-label {
+    margin: 0;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+
+}
+
+.btn-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    font: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+}
+
+
+.btn {
+    width: 120px;
+    height: 40px;
+    border: 1px solid black;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    background-color: #040c2c;
+    color: white;
+
+    border-radius: 60px;
+    box-shadow: 0px 0px 5px #3f4972;
+
+    cursor: pointer;
+}
+
+
+.btn:hover {
+    background: #0052d6;
+    border-color: #3b82f6;
+    color: #ffffff;
+}
+
+.btn.active {
+    background: linear-gradient(135deg, #0076ff, #0052d6);
+    color: #ffffff;
+    border-color: transparent;
+    box-shadow: 0 4px 12px rgba(0, 118, 255, 0.3);
+}
+
+
+.divider {
+    width: 1px;
+    height: 50px;
+    background-color: #132247;
+    align-self: flex-end;
+
+    margin-bottom: 4px;
+}
