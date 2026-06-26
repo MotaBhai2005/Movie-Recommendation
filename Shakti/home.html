@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendation System</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+    <header class="navbar-header">
+        <nav class="navbar">
+            <div class="nav-logo">
+                <a href="#">🎬 MovieHive</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" class="nav-item.active" id="nav-home">Home</a></li>
+                <li><a href="#" class="nav-item" id="nav-categories">Categories</a></li>
+                <li><a href="#" class="nav-item" id="nav-top-rated">Top Rated</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        
+        <section class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="hero-title">Your Next Cinematic Adventure Awaits</h1>
+                <p class="hero-tagline">Explore curated collections, filter by your favorite genres, and find exactly what to watch tonight.</p>
+                <a href="#movie-listing-section" class="btn-explore">Explore Movies</a>
+            </div>
+        </section>
+
+        <section class="search-section">
+            <div class="search-container">
+                <h2 class="search-heading">Looking for something specific?</h2>
+                <div class="search-box">
+                    <input 
+                        type="text" 
+                        id="movie-search-input" 
+                        placeholder="Search movies by title..." 
+                        autocomplete="off"
+                    >
+                    <button id="movie-search-btn" class="btn-search">Search</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="movie-listing-section">
+            </section>
+
+    </main>
+
+    <script src="../data/movies.js"></script>
+    <script src="search.js"></script>
+</body>
+</html>
