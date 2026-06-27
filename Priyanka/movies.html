@@ -1,12 +1,3 @@
-.searchbtn {
-background: transparent;
-border: none;
-padding: 0;
-cursor: pointer;
-display: flex;
-align-items: center;
-justify-content: center;
-}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,8 +42,8 @@ justify-content: center;
         <section class="filter-container">
             <div class="filter-group">
                 <h3 class="filter-label">Browse by Genre</h3>
-                <div class="btn-group">
-                    <button class="btn active"><i class="icon-all"></i> All</button>
+                <div class="genre-btn-group">
+                    <button class="btn all-btn active"><i class="icon-all"></i> All</button>
                     <button class="btn"><i class="icon-action"></i> Action</button>
                     <button class="btn"><i class="icon-comedy"></i> Comedy</button>
                     <button class="btn"><i class="icon-drama"></i> Drama</button>
@@ -65,13 +56,14 @@ justify-content: center;
 
             <div class="filter-group">
                 <h3 class="filter-label">Filter by Rating</h3>
-                <div class="btn-group">
-                    <button class="btn active"><i class="icon-star-white"></i> All</button>
-                    <button class="btn"><i class="icon-star-gold"></i> Above 9</button>
-                    <button class="btn"><i class="icon-star-gold"></i> Above 8</button>
-                    <button class="btn"><i class="icon-star-gold"></i> Above 7</button>
+                <div class="rating-btn-group">
+                    <button id="All" class=" all-btn btn active"><i class="icon-star-white"></i> All</button>
+                    <button id="9" class="btn"><i class="icon-star-gold"></i> Above 9</button>
+                    <button id="8" class="btn"><i class="icon-star-gold"></i> Above 8</button>
+                    <button id="7" class="btn"><i class="icon-star-gold"></i> Above 7</button>
                 </div>
             </div>
+
         </section>
 
 

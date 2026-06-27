@@ -63,7 +63,7 @@
 }
 
 .btn.active {
-    background: linear-gradient(135deg, #0076ff, #0052d6);
+    background: linear-gradient(to right, #3b82f6, #2b4886);
     color: #ffffff;
     border-color: transparent;
     box-shadow: 0 4px 12px rgba(0, 118, 255, 0.3);
@@ -75,6 +75,5 @@
     height: 50px;
     background-color: #132247;
     align-self: flex-end;
-
     margin-bottom: 4px;
 }
