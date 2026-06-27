@@ -20,18 +20,25 @@ function displayMovies(movieArray) {
     });
 }
 
-function intersectFilters(arrG, arrR) {
-
-}
-
-
 displayMovies(movies)
 
-
-let filterdArray = [];
 let activeGenre = [];
-let activeRating;
-let netMovies = [];
+let activeRating = "";
+
+
+function applyFilters() {
+    let result = movies;
+
+    if (activeGenre.length > 0) {
+        result = result.filter(movie => activeGenre.includes(movie.genre));
+    }
+
+    if (activeRating != "") {
+        result = result.filter(movie => activeRating <= movie.rating);
+    }
+
+    displayMovies(result);
+}
 
 
 document.querySelectorAll('.genre-btn-group .btn').forEach((btn) => {
@@ -40,19 +47,22 @@ document.querySelectorAll('.genre-btn-group .btn').forEach((btn) => {
         let genre = e.currentTarget.innerText.trim();
 
         function allmovies() {
+
             while (activeGenre.length) {
                 activeGenre.pop();
             }
-            displayMovies(movies);
+
             document.querySelectorAll('.genre-btn-group .btn').forEach(btn => {
                 btn.classList.remove('active');
             })
             document.querySelector('.genre-btn-group .all-btn').classList.add('active');
+            applyFilters();
             return;
         }
 
         if (genre == "All") {
             allmovies();
+            return;
         }
 
         else {
@@ -66,17 +76,14 @@ document.querySelectorAll('.genre-btn-group .btn').forEach((btn) => {
         }
         else {
             e.currentTarget.classList.toggle('active');
-            activeGenre = activeGenre.filter(g => g != genre)
+            activeGenre = activeGenre.filter(g => g != genre);
+            if (activeGenre.length === 0) {
+                allmovies();
+                return;
+            }
         }
 
-        filterdArray = movies.filter(movie => activeGenre.includes(movie.genre));
-
-        if (filterdArray.length == 0) {
-            allmovies();
-            return;
-        }
-
-        displayMovies(filterdArray);
+        applyFilters();
 
     })
 })
@@ -86,8 +93,8 @@ document.querySelectorAll('.rating-btn-group .btn').forEach((btn) => {
         activeRating = e.currentTarget.id;
         function allmovies() {
             activeRating = "";
-            displayMovies(movies);
-
+            applyFilters();
+            document.querySelectorAll('.rating-btn-group .btn').forEach(btn => btn.classList.remove('active'));
             document.querySelector('.rating-btn-group .all-btn').classList.add('active');
             return;
         }
@@ -104,19 +111,12 @@ document.querySelectorAll('.rating-btn-group .btn').forEach((btn) => {
             }
 
             else {
-                document.querySelector('.rating-btn-group .btn').classList.remove('active');
+                document.querySelectorAll('.rating-btn-group .btn').forEach(btn => btn.classList.remove('active'));
                 e.currentTarget.classList.add('active');
             }
         }
+        applyFilters();
 
-        filterdArray = movies.filter(movie => { return movie.rating >= Number(activeRating) });
-
-        if (filterdArray.length == 0) {
-            allmovies();
-            return;
-        }
-
-        displayMovies(filterdArray);
 
     })
 })
