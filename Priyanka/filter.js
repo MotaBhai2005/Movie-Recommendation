@@ -6,16 +6,48 @@ function displayMovies(movieArray) {
     movieArray.forEach(movie => {
 
         cardsContainer.innerHTML +=
-            ` <div class="mcard">
-            <div class="poster">
-                <img class="posterimg"
-                    src=${movie.poster}>
-            </div>
-            <div class="cardinfo">
-                <p class="name">${movie.title}</p>
-                <P> <span class="rating">${movie.rating}⭐</span> <span class="year">${movie.year}</span></P>
+            ` 
+       
+<div class="mcard">
+    <div class="poster">
+        <img class="posterimg" src=${movie.poster}>
+    </div>
+    <div class="movieCardDes">
+        <div class="btns">
+            <button class="playBtn">
+                <span class="material-symbols-outlined">
+                    play_arrow
+                </span>
+            </button>
+            <div class="grp2">
+                <button class="saveBtn">
+                    <span class="material-symbols-outlined">
+                        bookmark
+                    </span>
+                </button>
+
+                <button class="likeBtn">
+                    <span class="material-symbols-outlined">
+                        favorite
+                    </span>
+                </button>
             </div>
         </div>
+        <div class="cardinfo">
+            <p class="name">${movie.title}(${movie.year})</p>
+        </div>
+        <div class="genre">
+           <p><li>${movie.genre}</li></p>
+        </div>
+        <div class="des">
+            <p>${movie.description}</p>
+        </div>
+        <div class="rating">
+            <span class="star">⭐${movie.rating}</span>
+        </div>
+    </div>
+</div>
+
    `
     });
 }

@@ -1,38 +1,129 @@
-@import url('https://googleapis.com');
+.body {
+    font-family: "Ubuntu", sans-serif;
+
+}
 
 .cardsContainer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     column-gap: 10px;
-    row-gap: 20px;
-    border-radius: 10px;
+    row-gap: 40px;
+    border-radius: 18px;
     width: 100%;
     background-color: #01061A;
-    padding-top: 10px;
+    padding-top: 40px;
     box-shadow: 1px 1px 15px #3f4972;
+
 }
 
+.mcard .des,
+.mcard .btns,
+.mcard .genre {
+    display: none;
+}
+
+
+
 .mcard {
-
-
+    justify-self: center;
+    z-index: 1;
     position: relative;
     display: flex;
-    flex-direction: column;
+    flex-direction:
+        column;
 
-    height: 470px;
-    width: 280px;
-
-    background-color: #030b2e;
+    height: 360px;
+    width: 250px;
     background-color: #040c2c;
     border-radius: 10px;
-    box-shadow: 1px 1px 10px #3f4972;
+    box-shadow: 0px 1px 5px #3f4972;
+    transition: transform 0.3s ease-in-out;
+}
 
+/* :has return boolean */
+.cardsContainer:has(.mcard:hover) .mcard {
+    opacity: 0.4
+}
+
+.cardsContainer:has(.mcard:hover) .mcard:hover {
+    opacity: 1;
+    transform: scale(1.2);
+    z-index: 10;
+    box-shadow: none;
+    background-color: rgba(26, 42, 104, 0.3);
+}
+
+.cardsContainer:has(.mcard:hover) .mcard:hover .name {
+    font-size: 15px;
+}
+
+.cardsContainer:has(.mcard:hover) .mcard:hover .poster {
+    height: 60%;
+}
+
+.cardsContainer:has(.mcard:hover) .mcard:hover .btns,
+.cardsContainer:has(.mcard:hover) .mcard:hover .genre {
+    display: flex;
+}
+
+.cardsContainer:has(.mcard:hover) .mcard:hover .des {
+    display: block;
+}
+
+.cardsContainer:has(.mcard:hover) .mcard:hover .rating {
+    display: none;
+}
+
+.cardsContainer:has(.mcard:hover) .mcard:hover .poster::after {
+    height: 0;
+}
+
+.movieCardDes {
+    padding: 10 px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.genre {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-family: ;
+}
+
+.btns {
+    display: flex;
+    padding-left: 5px;
+    padding-top: 5px;
+
+    justify-content: space-between;
+
+    height: 30px;
+}
+
+.btns button {
+    height: 28px;
+    margin: 2px;
+    color: white;
+    background-color: rgba(4, 12, 44, 0);
+    box-shadow: 0px 1px 5px #3f4972;
+    border: none;
+}
+
+.des {
+    padding: 10px;
+    color: white;
+
+    font-weight: 100px;
+    font-size: small;
 }
 
 .poster {
     position: relative;
     width: 100%;
-    height: 85%;
+    height: 80%;
+    transition: height 0.3s ease;
 }
 
 .poster::after {
@@ -61,6 +152,22 @@
 
 .name {
     color: white;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 30px;
+    font-family: "Puritan", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+
+}
+
+.rating {
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    color: white;
+    padding: 5px 12px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: bold;
+
 }
