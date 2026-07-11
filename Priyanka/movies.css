@@ -1,0 +1,368 @@
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+
+    font-family: "Ubuntu", sans-serif;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #01061A;
+    margin-top: 80px;
+}
+
+.all-container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 95%;
+    align-items: center;
+
+}
+
+
+.header {
+    padding-left: 10px;
+    padding-right: 10px;
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 3px solid rgba(0, 118, 255, 0.3);
+    z-index: 10;
+    background: rgba(1, 6, 26, .5);
+    backdrop-filter: blur(18px);
+}
+
+.logosec img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.logosec {
+    background: linear-gradient(90deg, #58a6ff, #8b5cf6);
+
+    color: transparent;
+}
+
+.profilesec {
+    background-color: #0f0722;
+    color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* 2. Base style for BOTH icons inside the profile section */
+.profilesec .material-symbols-outlined {
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+}
+
+.right-section {
+    display: flex;
+    flex-direction: row;
+}
+
+.searchicon {
+    font-size: 40px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 10px #3f4972;
+    color: white;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease width 1s ease;
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+}
+
+.searchsec {
+    display: flex;
+    align-items: center;
+    background-color: #040c2c;
+    padding: 5px 30px;
+    gap: 0;
+}
+
+.searchbtn {
+    background: transparent;
+    border: 1px solid rgba(0, 118, 255, 0.3);
+    border-radius: 25px;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-input {
+    width: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    opacity: 0;
+    transition: width 0.4s ease, opacity 0.3s ease, margin 0.4s ease;
+}
+
+.searchbtn:hover .search-input {
+    width: 250px;
+    opacity: 1;
+}
+
+.filter-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: #040c2c;
+    box-shadow: 1px 1px 15px #3f4972;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    padding: 20px 24px;
+    gap: 32px;
+    width: 100%;
+}
+
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+.filter-label {
+    margin: 0;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 500px;
+}
+
+.btn {
+    width: 120px;
+    height: 40px;
+    border: 1px solid black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800px;
+    background-color: #040c2c;
+    color: white;
+    border-radius: 60px;
+    box-shadow: 0px 0px 5px #3f4972;
+    cursor: pointer;
+}
+
+
+.btn:hover {
+    background: #3c5c8f;
+    border-color: #3b82f6;
+    color: #ffffff;
+}
+
+.btn.active {
+    background: linear-gradient(to right, #3b82f6, #1a56d9);
+    color: #ffffff;
+    border-color: transparent;
+    box-shadow: 0 4px 12px rgba(0, 118, 255, 0.3);
+}
+
+.divider {
+    width: 1px;
+    height: 50px;
+    background-color: #132247;
+    align-self: flex-end;
+    margin-bottom: 4px;
+}
+
+.cardsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    column-gap: 10px;
+    row-gap: 40px;
+    border-radius: 30px;
+    width: 100%;
+    background-color: #01061A;
+    padding-top: 40px;
+    box-shadow: 1px 1px 15px #3f4972;
+}
+
+.mcard .des,
+.mcard .btns,
+.mcard .genre {
+    display: none;
+}
+
+.mcard {
+    justify-self: center;
+    z-index: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 360px;
+    width: 250px;
+    background-color: #040c2c;
+    border-radius: 10px;
+    box-shadow: 0px 1px 15px rgba(0, 118, 255, 0.3);
+    transition: transform 0.5s ease-in-out;
+}
+
+/* :has return boolean */
+.cardsContainer:has(.mcard:hover) .mcard {
+    opacity: 0.4
+}
+
+.cardsContainer:has(.mcard:hover) .mcard:hover {
+    opacity: 1;
+    transform: scale(1.2);
+    z-index: 10;
+    box-shadow: none;
+    background-color: rgba(26, 42, 104, 0.3);
+}
+
+.cardsContainer:has(.mcard:hover) .mcard:hover .name {
+    font-size: 15px;
+}
+
+.cardsContainer:has(.mcard:hover) .mcard:hover .poster {
+    height: 60%;
+}
+
+.cardsContainer:has(.mcard:hover) .mcard:hover .btns,
+.cardsContainer:has(.mcard:hover) .mcard:hover .genre {
+    display: flex;
+}
+
+.cardsContainer:has(.mcard:hover) .mcard:hover .des {
+    display: block;
+}
+
+.cardsContainer:has(.mcard:hover) .mcard:hover .rating {
+    display: none;
+}
+
+.cardsContainer:has(.mcard:hover) .mcard:hover .poster::after {
+    height: 0;
+}
+
+.movieCardDes {
+    padding: 10 px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.genre {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.btns {
+    display: flex;
+    padding-left: 5px;
+    padding-top: 5px;
+    justify-content: space-between;
+    height: 30px;
+}
+
+.btns button {
+    height: 28px;
+    margin: 2px;
+    color: white;
+    background-color: rgba(4, 12, 44, 0);
+    box-shadow: 0px 1px 5px #3f4972;
+    border: none;
+    cursor: pointer;
+}
+
+.des {
+    padding: 10px;
+    color: white;
+    font-weight: 100px;
+    font-size: small;
+}
+
+.poster {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 80%;
+    transition: height 0.7s ease-in-out;
+}
+
+.poster::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(to bottom, rgba(4, 12, 44, 0) 0%, #040c2c 100%);
+}
+
+.posterimg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cardinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.name {
+    color: white;
+    font-family: "Puritan", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.rating {
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.all-container {
+    animation: fade .6s ease;
+}
+
+@keyframes fade {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
