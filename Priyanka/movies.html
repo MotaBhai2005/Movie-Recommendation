@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pick A Flick</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+    <link rel="stylesheet" href="movies.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="filter.css">
+    <link rel="stylesheet" href="container.css">
+</head>
+
+<body>
+
+    <section class="header">
+        <div class="logosec">
+            <img src="https://lh3.googleusercontent.com/d/1BTt_KFzWXLDhX0S6A-dNYP8wCXv5C13W" alt="Movie Poster">
+        </div>
+        <div class="right-section">
+            <div class="searchsec">
+                <button class="searchbtn">
+                    <i class="material-symbols-outlined searchicon">search</i>
+                    <input type="text" class="search-input" placeholder="Search for movies...">
+                </button>
+            </div>
+            <div class="profilesec">
+                <i class="material-symbols-outlined bookmark">Bookmark</i>
+                <i class="material-symbols-outlined accounticon">person_2</i>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="all-container">
+        <section class="filter-container">
+            <div class="filter-group">
+                <h3 class="filter-label">Browse by Genre</h3>
+                <div class="genre-btn-group">
+                    <button class="btn all-btn active"><i class="icon-all"></i> All</button>
+                    <button class="btn"><i class="icon-action"></i> Action</button>
+                    <button class="btn"><i class="icon-comedy"></i> Comedy</button>
+                    <button class="btn"><i class="icon-drama"></i> Drama</button>
+                    <button class="btn"><i class="icon-scifi"></i> Sci-Fi</button>
+                    <button class="btn"><i class="icon-horror"></i> Horror</button>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="filter-group">
+                <h3 class="filter-label">Filter by Rating</h3>
+                <div class="rating-btn-group">
+                    <button id="All" class=" all-btn btn active"><i class="icon-star-white"></i> All</button>
+                    <button id="9" class="btn"><i class="icon-star-gold"></i> Above 9</button>
+                    <button id="8" class="btn"><i class="icon-star-gold"></i> Above 8</button>
+                    <button id="7" class="btn"><i class="icon-star-gold"></i> Above 7</button>
+                </div>
+            </div>
+
+        </section>
+
+
+        <section class="cardsContainer" id="cardsContainer"></section>
+    </div>
+
+    <script src="../data/movies.js"></script>
+    <script src="filter.js"></script>
+
+</html>
